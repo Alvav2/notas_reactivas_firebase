@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notas</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Cargando tus notas...</p>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <h1>📝 Mis Notas Reactivas</h1>
+      <div class="controls">
+        <input id="dark-toggle" type="checkbox" />
+        <label for="dark-toggle" title="Modo oscuro">🌗</label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Form + search group -->
+    <section class="top-row">
+      <div id="add-note" class="card">
+        <form id="note-form">
+          <input type="text" id="titulo" placeholder="Título de la nota" required />
+          <textarea id="contenido" placeholder="Escribe algo..." required></textarea>
+          <button type="submit" class="primary-btn">
+            <i data-lucide="plus"></i> Agregar Nota
+          </button>
+        </form>
+      </div>
+
+      <div id="search" class="card">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="buscar" placeholder="Buscar notas por título o contenido..." />
+        </div>
+        <div class="stats">
+          <span id="contador">Notas: 0</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="notas-container" class="card">
+      <ul id="lista-notas"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Alvaro © 💫</strong></p>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
